@@ -104,7 +104,6 @@ case ${chosen} in
 			i3lock
 		elif [[ -x '/usr/bin/swaylock' ]]; then
 			swaylock
-
 		fi
         ;;
     $suspend)
