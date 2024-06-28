@@ -27,12 +27,12 @@ set $rofi_cmd rofi \
 # TODO: add window with the next release of rofi-wayland
 #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
-set $menu "bash /home/vitor/.config/rofi/launchers/type-5/launcher.sh"
+set $menu "bash /home/vitorsilva/.config/rofi/launchers/type-5/launcher.sh"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /home/vitor/Pictures/wallpapers/wallpaper.jpeg fill
+output * bg /home/vitorsilva/Pictures/wallpapers/wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -240,16 +240,14 @@ input "type:touchpad" {
 }
 
 # Rofi Menus:
-bindsym $mod+m exec "bash /home/vitor/.config/rofi/applets/bin/mpd.sh"
-bindsym $mod+Shift+e exec "bash /home/vitor/.config/rofi/powermenu/type-2/powermenu.sh"
+bindsym $mod+m exec "bash /home/vitorsilva/.config/rofi/applets/bin/mpd.sh"
+bindsym $mod+Shift+e exec "bash /home/vitorsilva/.config/rofi/powermenu/type-2/powermenu.sh"
 
 # Gaps And No Borders:
 gaps inner 5
 gaps outer 5 
 default_border none
 default_floating_border none
-titlebar_padding 1
-titlebar_border_thickness 0
 
 
 #GTK Theme:
@@ -258,7 +256,7 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Nightfox-Dusk-B'
     gsettings set $gnome-schema icon-theme 'Flat-Remix-Blue-Dark'
     gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
-    gsettings set $gnome-schema font-name 'SF Pro Display'
+    gsettings set $gnome-schema font-name 'Jetbrains NFM, Semibold'
 }
 
 #MPD Exec:
@@ -267,12 +265,10 @@ exec --no-startup-id "bash ~/.local/bin/mpdscrobble"
 
 #Music Setup:
 assign [app_id="Spotify"] workspace number 4
-assign [app_id="ncmpcpp"] workspace number 3 
 
 #exec --no-startup-id "eww daemon"
 exec --no-startup-id "~/.cargo/bin/mpd-lyricsd"
 
-exec --no-startup-id kitty --class ncmpcpp "ncmpcpp" 
 exec --no-startup-id "bash ~/.config/mpd/mpd-notify"
 
 #Brightness CTRL:
